@@ -1,0 +1,17 @@
+<
+
+.high{
+	background-color: orange;
+}
+.mid{
+	background-color: yellow;
+}
+.low{
+	background-color: light green;
+}
+.extreeme{
+	background-color: red;
+}
+.done{
+	text-decoration: line-through;
+}
