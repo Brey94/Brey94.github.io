@@ -1,12 +1,12 @@
 <
 
-.high{
+.max{
 	background-color: Orange;
 }
 .mid{
 	background-color: yellow;
 }
-.low{
+.min{
 	background-color: GreenYellow;
 }
 .extreeme{
