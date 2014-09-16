@@ -13,3 +13,6 @@
 .done{
 	text-decoration: line-through;
 }
+body {
+    background-color: lightblue;
+}
