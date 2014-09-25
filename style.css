@@ -1,5 +1,6 @@
 body {
-    background-image: "bkground.jpg";
+    background-image: url("bkground");
+	background-repeat: repeat-y;
 }
 h1 {
     color: navy;
