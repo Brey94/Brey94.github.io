@@ -1,8 +1,7 @@
 body {
-    background-image: url("bkground.jpg");
-	background-repeat: repeat-y;
+    background: darkslategray;
 }
 h1 {
-    color: navy;
+    color: tomato;
     margin-left: 20px;
 }
