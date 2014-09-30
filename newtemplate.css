@@ -1,15 +1,19 @@
          header {
              position: fixed;
-             background-color: #bbbbbb;
+             background-color: #181818;
              top: 0px;
              left: 0px;
              width: 100%;
-             height: 80px;
+             height: 60px;
+	     font-size:3em;
+	     color: CC0000;
+	     overflow: hidden;
          }
          nav {
-             margin-top: 20px;
+             margin-top: 60px;
              margin-bottom: 0px;
-             background-color: green;
+             background-color: 000066;
+	     color: 000066;
          }
          nav li {
             display: inline;
@@ -18,14 +22,18 @@
              float: left;
              width: 20%;
              height: 500px;
-             background-color: blue;
+             background-color: black;
              color: white;
+	     text-decoration: none;
          }
          aside {
              float: left;
              width: 80%;
              height: 500px;
-             background-color: red;
+             background-color: darkslategray;
+	     text-decoration: none;
+	     color: white;
+	     overflow: auto
          }
          footer {
              clear: both;
@@ -36,3 +44,23 @@
              margin: 0px;
          }
 
+	IMG.displayed{
+		display:block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.high{
+	background-color: orange;
+	}
+	.mid{
+		background-color: yellow;
+	}
+	.min{
+		background-color: GreenYellow;
+	}
+	.extreeme{
+		background-color: red;
+	}
+	.done{
+		text-decoration: line-through;
+	}
