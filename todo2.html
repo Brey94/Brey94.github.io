@@ -1,9 +1,6 @@
 <html>
 <script>
-	doneTask = function(){
-		this.parentNode.className = this.parentNode.className + " done";
-		localSave();		
-		}
+
 	localSave = function(){
 		res = []
 		var i;
@@ -17,6 +14,11 @@
 		
 		
 		localStorage.setItem("todoDatabase",JSON.stringify(res))
+	}
+		
+	doneTask = function(){
+		this.parentNode.className = this.parentNode.className + " done";
+		localSave();		
 	}
 	function addThat(){
 		var task = document.getElementById('newTask').value;

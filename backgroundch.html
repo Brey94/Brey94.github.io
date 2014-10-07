@@ -1,0 +1,49 @@
+<html>
+	<style>
+		table,th,td{
+			border: 1px solid black;
+			background:white;
+			}
+	</style>
+
+	<script>
+		function myfunction(){
+			var red,blue,green;
+			var r = document.getElementById('redi').value;
+			var g = document.getElementById('greeni').value;
+			var b = document.getElementById('bluei').value;
+			var rgbcolor = "rgb(" + r + "," +g + "," + b +")";
+			document.body.style.backgroundColor= rgbcolor;
+			
+			var myTable = document.getElementById("colorhist");
+			row = document.createElement("tr");
+			r = document.createElement("td");
+			r.innerHtml = red;
+			row.appendChild(r);
+			g = document.createElement("td");
+			g.innerHtml = green;
+			row.appendChild(g);
+			b = document.createElement("td");
+			b.innerHtml = green;
+			row.appendChild(b);
+			row.style.backgroundColor = rgbcolor;
+			myTable.appendChild(row);
+	}
+	</script>
+	
+	<head>
+		<title>Colors</title>
+	</head>
+	<body>
+		<label for ="redi">Red:</label>
+		<input type="text" id="redi"><br>
+		<label for ="greeni">Green:</label>
+		<input type="text" id="greeni"><br>
+		<label for ="bluei">Blue:</label>
+		<input type="text" id="bluei"><br>
+		<button id="doit" onclick="myfunction()">Change Color</button>
+		<Table id=:colorhist">
+			<tr><th> Red </th><th> Green </th><th> Blue </th></tr>
+		</Table>
+	</body>
+</html>
