@@ -1,8 +1,23 @@
 <html>
 <script>
 	doneTask = function(){
-		this.parentNode.className = this.parentNode.className + " done";		
+		this.parentNode.className = this.parentNode.className + " done";
+		localSave();		
 		}
+	localSave = function(){
+		res = []
+		var i;
+		allEntries = document.querySelectorAll('li')
+		for(i=0; i < allEntries.length; i++){
+			if (allEntries[i].className != "done"){
+				res.push(allEnteries[i].innerText);
+			}
+		}
+		consol.log(res)
+		
+		
+		localStorage.setItem("todoDatabase",JSON.stringify(res))
+	}
 	function addThat(){
 		var task = document.getElementById('newTask').value;
 		var priVal = document.getElementById('priority').value;
@@ -27,6 +42,10 @@
 <head>
 <link rel="stylesheet" href="style.css">
 </head>
+<header>
+BRENNEN REYSACK's HOMEPAGE
+</header>
+<nav> -I intend to achive immortality, or die trying- </nav>
 
 <section>
 <ul>
@@ -52,4 +71,6 @@
 	</select><br>
 	<button id="add" onclick="addThat()"> Add</button>
 </aside>
+
+<footer> Copyright,Contact Me. </footer>
 </html>
