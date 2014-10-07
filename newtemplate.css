@@ -49,14 +49,14 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
-	.high{
-	background-color: orange;
+	.High{
+		color: orange;
 	}
-	.mid{
-		background-color: yellow;
+	.Medium{
+		color: yellow;
 	}
-	.min{
-		background-color: GreenYellow;
+	.Low{
+		color: GreenYellow;
 	}
 	.extreeme{
 		background-color: red;
