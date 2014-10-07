@@ -1,0 +1,45 @@
+<html>
+<script>
+	doneTask = function(){
+		this.parentNode.className = this.parentNode.className + " done";		
+		}
+	function addThat(){
+		var task = document.getElementById('newTask').value;
+		var priVal = document.getElementById('priority').value;
+		var myList = document.getElementById('todo');
+		var t = document.createElement('li');
+		t.className = priVal
+		
+		newcb = document.createElement('input')
+		newcb.type = 'checkbox';
+		t.appendChild(newcb);
+		d = document.createTextNode(task);
+		t.appendChild(d);
+	
+		
+		
+		myList.appendChild(t);
+		
+		newcb.onclick = doneTask
+	}
+</script>
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<aside>
+	<h1> TODO LIST </H1>
+	<ul id="todo">
+	</ul>
+	
+	<label for ="newTask">New Task:</label>
+	<input type='text' id="newTask">
+	<select id="priority">
+		<option>High</optioin>
+		<option>Medium</option>
+		<option>Low</option>
+	</select><br>
+	<button id="add" onclick="addThat()"> Add</button>
+</aside>
+</html>
