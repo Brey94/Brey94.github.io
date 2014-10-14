@@ -17,8 +17,10 @@
 	}
 		
 	doneTask = function(){
-		this.parentNode.className = this.parentNode.className + " done";
-		localSave();		
+		
+			this.parentNode.className = this.parentNode.className + " done";
+			localSave();
+		
 	}
 	function addThat(){
 		var task = document.getElementById('newTask').value;
