@@ -1,10 +1,19 @@
 <html>
+<style>
+	ul{
+		list-style: none;
+	}
+
+	h1{
+		text-decoration: underline;
+	}
+</style>
 <script>
 
 	localSave = function(){
 		res = []
 		var i;
-		allEntries = document.querySelectorAll('li')
+		var allEntries = document.querySelectorAll('li')
 		for(i=0; i < allEntries.length; i++){
 			if (allEntries[i].className != "done"){
 				res.push(allEnteries[i].innerText);
@@ -17,27 +26,92 @@
 	}
 		
 	doneTask = function(){
-		this.parentNode.className = this.parentNode.className + " done";
-		localSave();		
+			this.parentNode.className= this.parentNode.className + " done";
+			localSave();		
+	}
+
+	nvmind = function(){
+		this.parentNode.className= this.parentNode.removeClass("done");
+	}
+
+	/*function addThis(){
+		var project = document.getElementById('newProject').value;
+		var myLst = document.getElementById('todo');
+		var lstEnt = document.createElement('li');
+		proj = document.createTextNode(project);
+		lstEnt.appendChild(proj);
+	
+		myLst.appendChild(lstEnt);
+		
+	}*/
+	function hideMeW(){
+		
+		if(Work.style.display !== 'none'){
+			Work.style.display = 'none';
+		}
+		else{
+			Work.style.display = 'block';
+		}
+	}
+	function hideMeC(){
+		if(Classes.style.display !== 'none'){
+			Classes.style.display = 'none';
+		}
+		else{
+			Classes.style.display = 'block';
+		}
+	}
+	function hideMeCH(){
+		if(Chores.style.display !== 'none'){
+			Chores.style.display = 'none';
+		}
+		else{
+			Chores.style.display = 'block';
+		}
+	}
+	function hideMeR(){
+		if(Recreation.style.display !== 'none'){
+			Recreation.style.display = 'none';
+		}
+		else{
+			Recreation.style.display = 'block';
+		}
+	}
+	function hideMe(){
+		if(Other.style.display !== 'none'){
+			Other.style.display = 'none';
+		}
+		else{
+			Other.style.display = 'block';
+		}
 	}
 	function addThat(){
 		var task = document.getElementById('newTask').value;
 		var priVal = document.getElementById('priority').value;
-		var myList = document.getElementById('todo');
+		var proj = document.getElementById('cata').value;
+		var dueD = document.getElementById('dueDate').value + " -- ";
+		var myList = document.getElementById(proj);
 		var t = document.createElement('li');
+		
 		t.className = priVal
 		
 		newcb = document.createElement('input')
 		newcb.type = 'checkbox';
 		t.appendChild(newcb);
 		d = document.createTextNode(task);
+		dd = document.createTextNode(dueD);
+		
+		t.appendChild(dd);
+		
 		t.appendChild(d);
-	
 		
 		
 		myList.appendChild(t);
-		
-		newcb.onclick = doneTask
+		if(newcb.checked == true){
+			newcb.onclick = nvmind;}
+		else if(newcb.checked == false){
+			newcb.onclick = doneTask;}
+
 	}
 </script>
 
@@ -61,17 +135,50 @@ BRENNEN REYSACK's HOMEPAGE
 
 <aside>
 	<h1> TODO LIST </H1>
-	<ul id="todo">
+
+	<h3 id="wo" onclick = "hideMeW()"> Work </h3>
+	<ul id="Work">
+	</ul>
+
+	<h3 id="cl" onclick = "hideMeC()"> Classes </h3>
+	<ul id="Classes">
+	</ul>
+
+	<h3 id="ch" onclick= "hideMeCH()"> Chores </h3>
+	<ul id="Chores">
+	</ul>
+
+	<h3 id= "re" onclick= "hideMeR()"> Recreation </h3>
+	<ul id="Recreation">
+	</ul>
+
+	<h3 id= "ot" onclick= "hideMe()"> Other </h3>
+	<ul id="Other">
 	</ul>
 	
+	<!--<label for ="newProject"> New Project:</label>
+	<input type='text' id="newProject">
+	<button id="addProject" onclick="addThis()"> Add</button>
+	<br><br>-->
 	<label for ="newTask">New Task:</label>
 	<input type='text' id="newTask">
+
 	<select id="priority">
 		<option>High</optioin>
 		<option>Medium</option>
 		<option>Low</option>
-	</select><br>
-	<button id="add" onclick="addThat()"> Add</button>
+	</select>
+	<select id="cata">
+		<option>Work</option>
+		<option>Classes</option>
+		<option>Chores</option>
+		<option>Recreation</option>
+		<option>Other</option>
+	</select>
+		<br>
+	<label for ="dueDate">Due  Date: </label>
+	<input type='text' id="dueDate">
+	<button id="addtask" onclick="addThat()"> Add</button>
 </aside>
 
 <footer> Copyright,Contact Me. </footer>
