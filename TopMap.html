@@ -50,28 +50,39 @@
 		myRequest.onreadystatechange = function() {
 		if (myRequest.readyState == 4) 
 			if(myRequest.status == 200) {
-			var res = eval('(' + myRequest.responseText + ')');
-			var item = document.createElement('li');
-			item.class = 'items';
+				var res = eval('(' + myRequest.responseText + ')');
+				var item = document.createElement('li');
+				item.class = 'items';
 
 
-			item.innerHTML = res.results[0].description;
-			var link = document.createElement('a');
-			link.innerHTML = ' Find Out More ';
-			link.href = 'http://en.wikipedia.org/wiki/' + myLoc;
-			var place = document.createElement('h3');
-			place.innerHTML= myLoc;
-			place.onclick = moveMap(myLoc);
+				item.innerHTML = res.results[0].description;
+				var link = document.createElement('a');
+				link.innerHTML = ' Find Out More ';
+				link.href = 'http://en.wikipedia.org/wiki/' + myLoc;
+				var place = document.createElement('h3');
+				place.innerHTML= myLoc;
+				place.onclick = moveMap(myLoc);
 
-			var items = document.getElementById('items');
+				var items = document.getElementById('items');
 
-			items.appendChild(place);
-			items.appendChild(item);
+				items.appendChild(place);
+				items.appendChild(item);
 			
-			items.appendChild(link);
+				items.appendChild(link);
 	
+			}
+			else{
+				var searched = document.createElement('h3');
+				searched.innerHTML = myLoc;
+				var expl = document.createElement('li');
+				expl.innerHTML = "Error: Information on location was not found. Please check the spelling of" +
+						" the requested location. If error persists, Information may not be available" +
+						" via InfoMAP";
+				var itoms = document.getElemetById('items');
+				itoms.appendChild(searched);
+				itoms.appendChild(expl);
+			}
 		}
-	}
 	}
 	function newPlace() {
   		var address = document.getElementById('newLoc').value;
@@ -107,3 +118,4 @@
 		</div>
   	</body>
 </html>
+
