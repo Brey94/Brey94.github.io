@@ -51,23 +51,18 @@
 		if (myRequest.readyState == 4) 
 			if(myRequest.status == 200) {
 				var res = eval('(' + myRequest.responseText + ')');
-				var item = document.createElement('li');
-				item.class = 'items';
-
-
-				item.innerHTML = res.results[0].description;
+				var sumer = document.createElement('li');
+				sumer.class = 'items';
+				sumer.innerHTML = res.results[0].description;
 				var link = document.createElement('a');
 				link.innerHTML = ' Find Out More ';
 				link.href = 'http://en.wikipedia.org/wiki/' + myLoc;
 				var place = document.createElement('h3');
 				place.innerHTML= myLoc;
 				place.onclick = moveMap(myLoc);
-
 				var items = document.getElementById('items');
-
 				items.appendChild(place);
-				items.appendChild(item);
-			
+				items.appendChild(sumer);
 				items.appendChild(link);
 	
 			}
